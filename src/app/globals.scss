@@ -1,0 +1,48 @@
+
+h1 {
+  font-size: 90px;
+  width: 100%;
+  text-align: center;
+  padding: 40px;
+}
+
+body {
+  transition-property: opacity, background, transform, filter, background-color !important;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+
+  &:has(.page-transition) {
+    & .loading-gif {
+      opacity: 1;
+    }
+  }
+}
+
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition-property: opacity, background, transform, filter, background-color, width, height !important;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+}
+
+.page-transition {
+  background: black;
+  filter: blur(30px);
+  width: calc(100% + 200px);
+  height: calc(100% + 200px);
+  transform: scale(1.1);
+}
+
+.loading-gif {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  opacity: 0;
+}
