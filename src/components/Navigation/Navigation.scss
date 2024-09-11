@@ -6,10 +6,19 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  background: $bg-color-light-gray;
 
   &__menu {
     display: flex;
     align-items: center;
     gap: $space-sm;
+  }
+
+  &__logo {
+    @include header-font;
+    color: $color-shark;
+    display: flex;
+    align-items: center;
+    gap: $space-md;
   }
 }

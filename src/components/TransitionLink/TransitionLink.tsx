@@ -20,12 +20,14 @@ const TransitionLink = ({
   const handleTransition = async (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
 
-    const body = document.querySelector('.app-container');
+    if (href !== pathname) {
+      const body = document.querySelector('.app-container');
 
-    body?.classList.add('page-transition');
+      body?.classList.add('page-transition');
 
-    await sleep(500);
-    router.push(href);
+      await sleep(500);
+      router.push(href);
+    }
   };
 
   useEffect(() => {

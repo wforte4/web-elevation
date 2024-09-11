@@ -1,15 +1,10 @@
 
-h1 {
-  font-size: 90px;
-  width: 100%;
-  text-align: center;
-  padding: 40px;
-}
 
 body {
   transition-property: opacity, background, transform, filter, background-color !important;
   transition-timing-function: ease-in-out;
   transition-duration: 500ms;
+  background: none !important;
 
   &:has(.page-transition) {
     & .loading-gif {
@@ -31,11 +26,7 @@ body {
 }
 
 .page-transition {
-  background: black;
   filter: blur(30px);
-  width: calc(100% + 200px);
-  height: calc(100% + 200px);
-  transform: scale(1.1);
 }
 
 .loading-gif {

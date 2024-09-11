@@ -1,10 +1,15 @@
 import ClientWrapper from '@/components/ClientWrapper/ClientWrapper';
-import { Inter } from 'next/font/google';
+import { Inter, Poppins } from 'next/font/google';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import './globals.scss';
 
-const inter = Inter({ subsets: ['latin'] });
+export const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' });
+export const poppins = Poppins({
+  subsets: ['latin'], style: 'normal', weight: ['400', '700'], display: 'swap', variable: '--font-poppins',
+});
+const fonts = [inter, poppins];
+const fontClassnames = fonts.map((font) => font.variable).join(' ');
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -23,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={fontClassnames}>
         <div className='app-container'>
           <ClientWrapper>
             {children}
